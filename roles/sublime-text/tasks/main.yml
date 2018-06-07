@@ -1,0 +1,26 @@
+---
+- name: Install Sublime Text
+  homebrew_cask:
+    name:
+      - sublime-text
+
+- name: Ensure Local directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Local"
+    state: directory
+
+# https://forum.sublimetext.com/t/license-installation-silently/13749
+- name: Copy License
+  copy:
+    src: files/License.sublime_license
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Local"
+
+- name: Ensure Packages/User directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Packages/User"
+    state: directory
+
+- name: Copy configuration
+  copy:
+    src: files/User/
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Packages/User"
