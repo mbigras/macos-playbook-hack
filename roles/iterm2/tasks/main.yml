@@ -1,0 +1,11 @@
+---
+- name: Install iTerm2
+  homebrew_cask:
+    name: iterm2
+
+- name: Copy configuration
+  become: yes
+  copy:
+    src: com.googlecode.iterm2.plist
+    dest: "{{ ansible_env.HOME }}/Library/Preferences"
+    # group: admin

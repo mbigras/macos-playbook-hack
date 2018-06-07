@@ -16,6 +16,7 @@ package manager
 configuration manager
 secrets manager
 shell
+terminal
 text editor
 
 Create a new password

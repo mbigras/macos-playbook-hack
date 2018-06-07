@@ -1,0 +1,4 @@
+com.googlecode.iterm2.plist file is a pain
+gets converted from text to binary
+updated on every restart
+affects playbook idempotency
