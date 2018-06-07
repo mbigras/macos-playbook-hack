@@ -1,16 +1,3 @@
 - hosts: all
   roles:
-    - foo
     - sublime-text
-  tasks:
-    - name: Print something
-      debug:
-        msg: hello world
-
-    - name: Print something else
-      debug:
-        var: not_secret
-
-    - name: Print something secret
-      debug:
-        var: super_secret

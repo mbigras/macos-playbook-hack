@@ -1,3 +1,0 @@
----
-- name: Print something from foo
-  debug: msg="hello world!"
