@@ -12,7 +12,7 @@
 # https://forum.sublimetext.com/t/license-installation-silently/13749
 - name: Copy License
   copy:
-    src: files/License.sublime_license
+    src: License.sublime_license
     dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Local"
 
 - name: Ensure Packages/User directory exists
@@ -22,5 +22,5 @@
 
 - name: Copy configuration
   copy:
-    src: files/User/
+    src: User/
     dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Packages/User"
