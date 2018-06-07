@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+main() {
+	cat <<-DESCRIPTION >&2
+	This script bootstraps a laptop running macOS.
+	It checks for Homebrew, Ansible, and LastPass.
+	If they are installed then it does nothing.
+	If they are not installed then it installs them.
+	DESCRIPTION
+
+	is_installed brew \
+		|| install_homebrew
+
+	is_installed ansible \
+		|| install_ansible
+
+	is_installed lpass \
+		|| install_lastpass
+}
+
+is_installed() {
+	command -v $1 > /dev/null
+	[[ $? == 0 ]]
+}
+
+install_homebrew() {
+	echo >&2 'Installing Homebrew...'
+	local url='https://raw.githubusercontent.com/Homebrew/install/master/install'
+	yes \
+		| /usr/bin/ruby -e "$(curl -fsSL $url)"
+}
+
+install_ansible() {
+	echo >&2 'Installing Ansible...'
+	brew install ansible
+}
+
+install_lastpass() {
+	echo >&2 'Installing LastPass...'
+	brew install lastpass-cli
+}
+
+main

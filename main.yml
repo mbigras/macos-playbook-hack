@@ -1,0 +1,13 @@
+- hosts: all
+  tasks:
+    - name: Print something
+      debug:
+        msg: hello world
+
+    - name: Print something not secret
+      debug:
+        var: not_secret
+
+    - name: Print something secret
+      debug:
+        var: super_secret

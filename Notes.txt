@@ -1,0 +1,90 @@
+macOS Playbook Hack
+
+Overview
+
+Create a new password
+Programs
+Gotchas
+Connecting to machine
+Sometimes homebrew installation fails
+Where do I put the secrets?
+Stack overflow question
+
+Programs
+
+package manager
+configuration manager
+secrets manager
+
+Create a new password
+
+lpass add --notes macos-playbook-hack
+
+Gotchas
+
+Synced folders don't work well for macOS Vagrant boxes
+Use vagrant ssh-config, ssh, scp, and filewatcher to sync folders
+Installing command line tools doesn't work well, using artdev/macos-sierra instead
+
+Where do I put the secrets?
+
+https://stackoverflow.com/questions/30209062/ansible-how-to-encrypt-some-variables-in-an-inventory-file-in-a-separate-vault
+
+group_vars/ 
+  san_diego/
+    vars.yml  # unencrypted yaml file
+    vault.yml # encrypted yaml file
+
+Connecting to machine
+
+vagrant ssh-config > ssh-config
+cat ssh-config
+ssh -F ssh-config default echo hello world
+scp -r -F ssh-config . default:~/workspace
+filewatcher '*' 'scp -r -F ssh-config . default:~/workspace'
+rsync -av -e 'ssh -F ssh-config' . default:~/workspace
+
+https://unix.stackexchange.com/a/187654/173557
+
+echo $'It\'s Shell Programming'
+echo $"It's $dog Shell Programming"
+
+filewatcher '*' "rsync -av -e 'ssh -F ssh-config' . default:~/workspace"
+
+Sometimes homebrew installation fails
+
+https://github.com/Homebrew/brew/issues/1779
+
+https://apple.stackexchange.com/questions/107307/how-can-i-install-the-command-line-tools-completely-from-the-command-line
+
+echo $PROD
+Command Line Tools (macOS Sierra version 10.12) for Xcode-9.2
+
+touch /tmp/.com.apple.dt.CommandLineTools.installondemand.in-progress;
+PROD=$(softwareupdate -l |
+  grep "\*.*Command Line" |
+  head -n 1 | awk -F"*" '{print $2}' |
+  sed -e 's/^ *//' |
+  tr -d '\n')
+softwareupdate -i "$PROD" --verbose;
+
+
+Stack overflow question
+
+vagrant ssh-config > ssh-config
+cat ssh-config
+Host default
+  HostName 127.0.0.1
+  User vagrant
+  Port 2222
+  UserKnownHostsFile /dev/null
+  StrictHostKeyChecking no
+  PasswordAuthentication no
+  IdentityFile /Users/max/.vagrant.d/boxes/emil-appunite-VAGRANTSLASH-macos10.13-xcode9.0.1/1.0.0/virtualbox/vagrant_private_key
+  IdentitiesOnly yes
+  LogLevel FATAL
+
+ssh -F ssh-config default echo hello world
+hello world
+scp -r -F ssh-config . default:~/workspace
+rsync ???
