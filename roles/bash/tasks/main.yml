@@ -1,0 +1,5 @@
+---
+- name: Copy configuration
+  copy:
+    src: .bashrc
+    dest: "{{ ansible_env.HOME }}"
