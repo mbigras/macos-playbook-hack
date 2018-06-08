@@ -1,0 +1,20 @@
+---
+- name: Install Alfred 3
+  homebrew_cask:
+    name:
+      - alfred
+
+- name: Ensure Library directory exists
+  file:
+    path: "{{ ansible_env.HOME }}/Library/Application Support/Alfred 3"
+    state: directory
+
+- name: Copy License
+  copy:
+    src: license.plist
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/Alfred 3"
+
+- name: Copy configuration
+  copy:
+    src: Alfred.alfredpreferences
+    dest: "{{ ansible_env.HOME }}/Library/Application Support/Alfred 3"

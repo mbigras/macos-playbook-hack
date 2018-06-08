@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>customSites</key>
+	<dict>
+		<key>33D69F86-5CB9-4ED2-9ADC-FE37977EA669</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>unq</string>
+			<key>text</key>
+			<string>unix stack exchange questions</string>
+			<key>url</key>
+			<string>http://unix.stackexchange.com/users/173557/mbigras?tab=questions&amp;sort=newest</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>3C3C53A1-63C0-425F-9472-40A4A003E918</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>rd</string>
+			<key>text</key>
+			<string>Ruby Docs</string>
+			<key>url</key>
+			<string>http://ruby-doc.com/search.html?cx=011815814100681837392%3Awnccv6st5qk&amp;q={query}&amp;sa=Search&amp;cof=FORID%3A9</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>5C1710D9-3B46-42AE-89C5-1B2F5F2400B9</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>son</string>
+			<key>text</key>
+			<string>new stack overflow question</string>
+			<key>url</key>
+			<string>http://stackoverflow.com/questions/ask</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>879FDEA3-7EBA-40CD-BBFE-5397589432D0</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>auq</string>
+			<key>text</key>
+			<string>ask ubuntu questions</string>
+			<key>url</key>
+			<string>http://askubuntu.com/users/382864/mbigras?tab=questions&amp;sort=activity</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+		<key>BD6DCBE9-2D1D-446C-9303-B2291C58C1E2</key>
+		<dict>
+			<key>enabled</key>
+			<true/>
+			<key>keyword</key>
+			<string>soq</string>
+			<key>text</key>
+			<string>stack overflow questions</string>
+			<key>url</key>
+			<string>http://stackoverflow.com/users/2909897/mbigras?tab=questions</string>
+			<key>utf8</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
