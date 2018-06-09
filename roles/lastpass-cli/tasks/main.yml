@@ -1,0 +1,9 @@
+---
+- name: install
+  homebrew:
+    name: lastpass-cli
+
+- name: add configuration to source files
+  copy:
+    src: lastpass-cli
+    dest: "{{ ansible_env.HOME }}/.bashrc.d"

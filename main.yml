@@ -3,6 +3,7 @@
     - bash
     - fzf
     - z
+    - lastpass-cli
     - iterm2
     - sublime-text
     - alfred3
