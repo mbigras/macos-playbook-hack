@@ -1,6 +1,7 @@
 - hosts: all
   roles:
     - bash
+    - fzf
     - iterm2
     - sublime-text
     - alfred3
