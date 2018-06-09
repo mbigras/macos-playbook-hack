@@ -24,3 +24,8 @@
   copy:
     src: User/
     dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text 3/Packages/User"
+
+- name: change shell editor
+  copy:
+    src: editor
+    dest: "{{ ansible_env.HOME }}/.bashrc.d"
