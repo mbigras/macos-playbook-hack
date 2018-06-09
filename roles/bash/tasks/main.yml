@@ -1,5 +1,15 @@
 ---
-- name: Copy configuration
+- name: add main configuration
   copy:
     src: .bashrc
     dest: "{{ ansible_env.HOME }}"
+
+- name: add source files directory
+  file:
+    path: "{{ ansible_env.HOME }}/.bashrc.d"
+    state: directory
+
+- name: configure shell prompt
+  copy:
+    src: prompt
+    dest: "{{ ansible_env.HOME }}/.bashrc.d"
