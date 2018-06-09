@@ -2,6 +2,7 @@
   roles:
     - bash
     - fzf
+    - z
     - iterm2
     - sublime-text
     - alfred3
